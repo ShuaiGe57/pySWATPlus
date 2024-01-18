@@ -37,30 +37,38 @@ from pySWATPlus.TxtinoutReader import TxtinoutReader
 reader = TxtinoutReader(txtinout_folder_path)
 ```
 This class allows users to do the following: 
-##### ```set_beginning_and_end_year```
-It allows the user to modify the begining and end year in the ```time.sim``` file.
+##### ```set_simulation_time```
+It allows the user to modify the begining and end time in the ```time.sim``` file.
 
-It takes two parameters:
-- ```beginning``` (int): specifies the begining year
-- ```end``` (int): specifies the end year
+It takes three parameters:
+- ```start_date``` (str): specifies the begining date, e.g., "2023-01-01"
+- ```end_date``` (str): specifies the end date, e.g., "2023-12-31"
+- ```step``` (int): specifies the simulation step, default 0
 
 ```py
-reader.set_beginning_and_end_year(beginning, end)
+reader.set_simulation_time(start_date, end_date)
 ```
 
 ```py
-reader.set_beginning_and_end_year(2010, 2020)
+reader.set_simulation_time("2023-01-01", "2023-12-31")
 ```
-##### ```set_warmup```
-This function allows the user to modify the warmup period (years) in the "time.sim" file.
+##### ```set_print_time```
+This function allows the user to specify the period for print  in the "print.prt" file.
 
-As a parameter it takes the ```warmup``` (int) value.
+It takes four parameters:
+- ```start_date``` (str): specifies the begining date, default None
+- ```end_date``` (str): specifies the end date, e.g., default None
+- ```warmup``` (int): specifies the nyskip, default 0
+- ```interval``` (int): specifies the print interval, default 1
+- 
+
 ```py
-reader.set_warmup(warmup)
+reader.set_print_time(start_date, end_date, warmup, interval)
 ```
 
 ```py
-reader.set_warmup(3)
+reader.set_print_time(warmup = 3)
+reader.set_print_time(start_date="2023-01-01", end_date="2023-12-31")
 ```
 
 ##### ```enable_object_in_print_prt```
