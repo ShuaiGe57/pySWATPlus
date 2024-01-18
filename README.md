@@ -1,5 +1,6 @@
 # pySWATPlus
-pySWATPlus is a python package for running and calibrating default or custom SWAT+ projects with python.
+This is a copy of icra/pySWATPlus.
+the original functions set_beginning_and_end_year and set_warmup were modified to set_simulation_time and set_print_time
 
 With this package and by providing an existing SWAT+ model, modelers can do the following: 
 - Acces the TxtInOut folder used by SWAT+ and navigate through all its files in order to read, modify and write them.
