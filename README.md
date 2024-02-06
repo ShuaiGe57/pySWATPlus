@@ -5,9 +5,6 @@ This is a copy of icra/pySWATPlus.
 - The original functions ```set_beginning_and_end_year``` and ```set_warmup``` were modified to ```set_simulation_time``` and ```set_print_time```
 - Add ```change_params``` function to manipulate parameters like PEST
 
-With this package and by providing an existing SWAT+ model, modelers can do the following: 
-- Acces the TxtInOut folder used by SWAT+ and navigate through all its files in order to read, modify and write them.
-- Calibrate the different SWAT+ input parameters in order to optimize the output through the Pymoo.
 
 # Installation
 pySWATPlus can be installed via PyPI and requires additional packages to be installed first for its proper functioning. These are the commands required for installing the necessary packages:
