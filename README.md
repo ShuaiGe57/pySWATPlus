@@ -149,15 +149,16 @@ The function takes the following parameters:
 - ```dir``` (str): The target directory where the SWAT model files will be copied
 - ```overwrite``` (bool, optional): If True, overwrite the content of 'dir'; if False, create a new folder (default is False)
 - ```params``` (Dict[str, Tuple[str, List[Tuple[str, str, int]]], optional): A dictionary containing modifications to input files. **Format:** {filename: (id_col, [(id, col, value)])}
+- ```tpl_params``` (Dict[str, Dict], optional): A dictionary containing modifications to input files. **Format:** {tpl_filename: {'#par1#': value1, '#par2#': value2,...}}
 - ```show_output``` (bool, optional): If True, print the simulation output; if False, suppress output (default is True)
 
 The function returns the path to the directory where the SWAT simulation was executed
 
 ```py
-txt_in_out_result =  reader.copy_and_run(dir="directory_path", overwrite=False, params={'file_name': [('id_col', ['id', 'col', value)])}, show_output=False)
+txt_in_out_result =  reader.copy_and_run(dir="directory_path", overwrite=False, params={'file_name': [('id_col', ['id', 'col', value)])}, tpl_params = {'tpl_filename': {'par': value}}, show_output=False)
 ```
 ```py
-txt_in_out_result = reader.copy_and_run(dir = "directory_path", overwrite=False, params = {'plants.plt': [('name', ['bana', 'bm_e', 45)])}, show_output=False)
+txt_in_out_result = reader.copy_and_run(dir = "directory_path", overwrite=False, params = {'plants.plt': [('name', ['bana', 'bm_e', 45)])}, tpl_params = {'soils.sol.tpl': {'#awc#': 0.5, '#k#': 2.2}, 'lum.dtl.tpl': {'#fert#': 66}}, show_output=False)
 ```
 
 ##### ```run_parallel_swat```
