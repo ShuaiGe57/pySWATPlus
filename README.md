@@ -128,16 +128,17 @@ Run the SWAT simulation with modified input parameters.
 
 The function takes the following parameters:
 - ```params``` (Dict[str, Tuple[str, List[Tuple[str, str, int]]], optional): A dictionary containing modifications to input files. **Format:** {filename: (id_col, [(id, col, value)])}
-- ```tpl_params``` (Dict[str, Dict], optional): A dictionary containing modifications to input files. **Format:** {tpl_filename: {par1: value1, par2: value2,...}}
+- ```tpl_params``` (Dict[str, Dict], optional): A dictionary containing modifications to input files. **Format:** {tpl_filename: {'#par1#': value1, '#par2#': value2,...}}
 - ```show_output``` (bool, optional): If True, print the simulation output; if False, suppress output (default is True)
 
+tpl 文件格式 需要修改的参数用#par_name#标记, 在tpl_params 中也用相同的#par_name# 
 The function returns the path to the directory where the simulation was executed (str)
 
 ```py
-txt_in_out_result = reader.run_swat(params = {'file_name': ('id_col', [('id', 'col', value)])}, show_output=False)
+txt_in_out_result = reader.run_swat(params = {'file_name': ('id_col', [('id', 'col', value)])}, tpl_params = {'tpl_filename': {'par': value}}, show_output=False)
 ```
 ```py
-txt_in_out_result = reader.run_swat(params = {'plants.plt': ('name', [('bana', 'bm_e', 45)])}, show_output=False)
+txt_in_out_result = reader.run_swat(params = {'plants.plt': ('name', [('bana', 'bm_e', 45)])}, tpl_params = {'soils.sol.tpl': {'#awc#': 0.5, '#k#': 2.2}, 'lum.dtl.tpl': {'#fert#': 66}}, show_output=False)
 ```
 
 ##### ```copy_and_run```
