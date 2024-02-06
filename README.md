@@ -131,7 +131,8 @@ The function takes the following parameters:
 - ```tpl_params``` (Dict[str, Dict], optional): A dictionary containing modifications to input files. **Format:** {tpl_filename: {'#par1#': value1, '#par2#': value2,...}}
 - ```show_output``` (bool, optional): If True, print the simulation output; if False, suppress output (default is True)
 
-tpl 文件格式 需要修改的参数用#par_name#标记, 在tpl_params 中也用相同的#par_name# 
+tpl 文件格式 需要修改的参数用#par_name#标记, 在tpl_params 中也用相同的#par_name#
+
 The function returns the path to the directory where the simulation was executed (str)
 
 ```py
