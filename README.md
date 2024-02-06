@@ -128,6 +128,7 @@ Run the SWAT simulation with modified input parameters.
 
 The function takes the following parameters:
 - ```params``` (Dict[str, Tuple[str, List[Tuple[str, str, int]]], optional): A dictionary containing modifications to input files. **Format:** {filename: (id_col, [(id, col, value)])}
+- ```tpl_params``` (Dict[str, Dict], optional): A dictionary containing modifications to input files. **Format:** {tpl_filename: {par1: value1, par2: value2,...}}
 - ```show_output``` (bool, optional): If True, print the simulation output; if False, suppress output (default is True)
 
 The function returns the path to the directory where the simulation was executed (str)
