@@ -1,8 +1,9 @@
 # pySWATPlus
 This is a copy of icra/pySWATPlus.
 
-# change
-the original functions set_beginning_and_end_year and set_warmup were modified to set_simulation_time and set_print_time
+# Changes
+- the original functions set_beginning_and_end_year and set_warmup were modified to set_simulation_time and set_print_time
+- Add change_params function to manipulate parameters lite PEST
 
 With this package and by providing an existing SWAT+ model, modelers can do the following: 
 - Acces the TxtInOut folder used by SWAT+ and navigate through all its files in order to read, modify and write them.
