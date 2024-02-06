@@ -2,8 +2,8 @@
 This is a copy of icra/pySWATPlus.
 
 # Changes
-- the original functions set_beginning_and_end_year and set_warmup were modified to set_simulation_time and set_print_time
-- Add change_params function to manipulate parameters lite PEST
+- The original functions ```set_beginning_and_end_year``` and ```set_warmup``` were modified to ```set_simulation_time``` and ```set_print_time```
+- Add ```change_params``` function to manipulate parameters like PEST
 
 With this package and by providing an existing SWAT+ model, modelers can do the following: 
 - Acces the TxtInOut folder used by SWAT+ and navigate through all its files in order to read, modify and write them.
@@ -58,8 +58,8 @@ reader.set_simulation_time("2023-01-01", "2023-12-31")
 This function allows the user to specify the period for print  in the "print.prt" file.
 
 It takes four parameters:
-- ```start_date``` (str): specifies the begining date, default None
-- ```end_date``` (str): specifies the end date, e.g., default None
+- ```start_date``` (str): specifies the begining date, default None; only work for daily, not monthly, yearly, annual
+- ```end_date``` (str): specifies the end date, e.g., default None;  only work for daily, not monthly, yearly, annual
 - ```warmup``` (int): specifies the nyskip, default 0
 - ```interval``` (int): specifies the print interval, default 1
 - 
@@ -136,10 +136,10 @@ The function takes the following parameters:
 The function returns the path to the directory where the simulation was executed (str)
 
 ```py
-txt_in_out_result = reader.run_swat(params = {'file_name': [('id_col', ['id', 'col', value)])}, show_output=False)
+txt_in_out_result = reader.run_swat(params = {'file_name': ('id_col', [('id', 'col', value)])}, show_output=False)
 ```
 ```py
-txt_in_out_result = reader.run_swat(params = {'plants.plt': [('name', ['bana', 'bm_e', 45)])}, show_output=False)
+txt_in_out_result = reader.run_swat(params = {'plants.plt': ('name', [('bana', 'bm_e', 45)])}, show_output=False)
 ```
 
 ##### ```copy_and_run```
